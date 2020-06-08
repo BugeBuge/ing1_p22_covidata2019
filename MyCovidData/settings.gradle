@@ -1,0 +1,2 @@
+rootProject.name='My Covid Data'
+include ':app'
