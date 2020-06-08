@@ -18,5 +18,11 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, GraphActivity::class.java)
             startActivity(intent)
         }
+
+        val dataButon = findViewById<Button>(R.id.button_data)
+        dataButon.setOnClickListener{
+            val intent = Intent(this, ActivityDataAll::class.java)
+            startActivity(intent)
+        }
     }
 }
