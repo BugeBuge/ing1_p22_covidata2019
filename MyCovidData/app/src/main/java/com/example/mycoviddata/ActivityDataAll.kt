@@ -1,5 +1,6 @@
 package com.example.mycoviddata
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -43,7 +44,9 @@ class ActivityDataAll : AppCompatActivity() {
                         data.add(CountryStatData(i.Country, i.TotalConfirmed))
                     }
                     CountrydataRecyclerView.adapter = CountryListAd(activity, data)
-
+                    Placeconfirmed.text = wsdata.Global.TotalConfirmed.toString()
+                    Placedeath.text = wsdata.Global.TotalDeaths.toString()
+                    PlaceRecovered.text = wsdata.Global.TotalRecovered.toString()
                 }
                 else {
                     throw Exception()
@@ -55,5 +58,10 @@ class ActivityDataAll : AppCompatActivity() {
         CountrydataRecyclerView.setHasFixedSize(true)
         CountrydataRecyclerView.layoutManager = LinearLayoutManager(this,
             LinearLayoutManager.VERTICAL, false)
+    }
+
+    fun text_message_clicked(){
+        val intent = Intent(this, GraphActivity::class.java)
+        startActivity(intent)
     }
 }
