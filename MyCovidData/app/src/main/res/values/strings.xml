@@ -1,8 +1,32 @@
 <resources>
     <string name="app_name">My Covid Data</string>
     <string name="covidata_2019">COVIDATA 2019</string>
+    <string name="country">France</string>
+    <string name="confirmed">Confirmed :</string>
+    <string name="deaths">Deaths :</string>
+    <string name="recovered">Recovered :</string>
     <string name="data_graph_for_france">France</string>
-    <string name="confirmed">Confirmed</string>
-    <string name="death">Death</string>
-    <string name="recovered">Recovered</string>
+    <string name="confirmed_btn">Confirmed</string>
+    <string name="deaths_btn">Death</string>
+    <string name="recovered_btn">Recovered</string>
+    <string name="totals">TOTALS</string>
+    <string name="world">World:</string>
+    <string name="by_country">By Country:</string>
+    <string name="angleterre">Angleterre</string>
+    <string name="espagne">Espagne</string>
+    <string name="allemangne">Allemangne</string>
+    <string name="etats_unis">Etats-Unis</string>
+    <string name="italie">Italie</string>
+    <string name="chine">Chine</string>
+    <string name="in_this_application_you_ll_find_some_informations_about_coronavirus_in_the_world">In this application, you\'ll find some informations about Coronavirus in the world.</string>
+    <string name="app_by">App by:</string>
+    <string name="alexandre_vermeulen">Alexandre Vermeulen</string>
+    <string name="alexandre_bugeia">Alexandre Bugeia</string>
+    <string name="anthony_dufay">Anthony Dufay</string>
+    <string name="data">Data</string>
+    <string name="made_at_epita">Made at EPITA</string>
+    <string name="graph">Graph</string>
+    <string name="clique_ici">Clique Ici</string>
+    <string name="_100">100</string>
+    <string name="pays">Pays</string>
 </resources>
