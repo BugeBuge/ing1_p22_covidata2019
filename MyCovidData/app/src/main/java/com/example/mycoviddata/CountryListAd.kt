@@ -17,7 +17,7 @@ class CountryListAd(val context: Context, val data: List<CountryStatData>)
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val rowView = LayoutInflater
             .from(context)
-            .inflate(R.layout.item_graph_list_view, parent, false)
+            .inflate(R.layout.activity_country_item_list, parent, false)
 
         return ViewHolder(rowView)
     }
