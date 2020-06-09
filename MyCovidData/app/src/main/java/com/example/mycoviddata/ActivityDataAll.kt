@@ -1,5 +1,6 @@
 package com.example.mycoviddata
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -57,5 +58,10 @@ class ActivityDataAll : AppCompatActivity() {
         CountrydataRecyclerView.setHasFixedSize(true)
         CountrydataRecyclerView.layoutManager = LinearLayoutManager(this,
             LinearLayoutManager.VERTICAL, false)
+    }
+
+    fun text_message_clicked(){
+        val intent = Intent(this, GraphActivity::class.java)
+        startActivity(intent)
     }
 }
