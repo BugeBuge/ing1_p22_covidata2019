@@ -43,7 +43,9 @@ class ActivityDataAll : AppCompatActivity() {
                         data.add(CountryStatData(i.Country, i.TotalConfirmed))
                     }
                     CountrydataRecyclerView.adapter = CountryListAd(activity, data)
-
+                    Placeconfirmed.text = wsdata.Global.TotalConfirmed.toString()
+                    Placedeath.text = wsdata.Global.TotalDeaths.toString()
+                    PlaceRecovered.text = wsdata.Global.TotalRecovered.toString()
                 }
                 else {
                     throw Exception()
