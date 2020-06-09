@@ -25,7 +25,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
-        android:text="In this application, you'll find some informations about Coronavirus in the world."
+        android:text="@string/in_this_application_you_ll_find_some_informations_about_coronavirus_in_the_world"
         android:textAlignment="center"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -37,8 +37,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="24dp"
-        android:text="App by:"
+        android:layout_marginTop="32dp"
+        android:text="@string/app_by"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Title" />
@@ -47,7 +47,7 @@
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Alexandre Vermeulen"
+        android:text="@string/alexandre_vermeulen"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
@@ -70,7 +70,7 @@
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Alexandre Bugeia"
+        android:text="@string/alexandre_bugeia"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
@@ -79,7 +79,7 @@
         android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Anthony Dufay"
+        android:text="@string/anthony_dufay"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
@@ -89,7 +89,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="Data"
+        android:text="@string/data"
         app:layout_constraintStart_toStartOf="@+id/guideline3"
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
@@ -105,7 +105,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
-        android:text="Made at EPITA"
+        android:text="@string/made_at_epita"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/imageView" />
@@ -115,8 +115,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="Graph"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="@string/graph"
         app:layout_constraintStart_toStartOf="@+id/guideline3"
         app:layout_constraintTop_toBottomOf="@+id/button_data" />
 
@@ -128,5 +127,14 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/logoepita" />
+
+    <Button
+        android:id="@+id/button_surprise"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="40dp"
+        android:text="@string/clique_ici"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/button_data" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
