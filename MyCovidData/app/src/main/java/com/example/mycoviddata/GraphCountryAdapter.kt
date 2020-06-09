@@ -4,21 +4,22 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class GraphListAdapter(val context: Context, val data: List<DateGraphSample>)
-        : RecyclerView.Adapter<GraphListAdapter.ViewHolder>() {
+class GraphCountryAdapter(val context: Context, val data: List<CountryName>,
+                    private val countryListener: View.OnClickListener)
+    : RecyclerView.Adapter<GraphCountryAdapter.ViewHolder>() {
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val dateView: TextView = itemView.findViewById(R.id.dateGraph)
-        val progress: ProgressBar = itemView.findViewById(R.id.progressBar)
+        val textView: TextView = itemView.findViewById(R.id.countryNameGraph)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val rowView = LayoutInflater
             .from(context)
-            .inflate(R.layout.item_graph_list_view, parent, false)
+            .inflate(R.layout.item_graph_list_country, parent, false)
+
+        rowView.setOnClickListener(countryListener)
 
         return ViewHolder(rowView)
     }
@@ -30,8 +31,9 @@ class GraphListAdapter(val context: Context, val data: List<DateGraphSample>)
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val currentItem = data[position]
 
-        holder.dateView.text = currentItem.date
-        holder.progress.progress = currentItem.progress
-        holder.progress.max = currentItem.max
+        holder.textView.text = currentItem.Country
+
+        holder.itemView.tag = position
     }
+
 }
