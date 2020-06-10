@@ -10,6 +10,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.gson.GsonBuilder
 import kotlinx.android.synthetic.main.activity_data_all.*
+import kotlinx.android.synthetic.main.activity_graph.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -46,12 +47,22 @@ class ActivityDataAll : AppCompatActivity() {
                     val wsdata = response.body()!!
 
                     for (i in wsdata.Countries){
-                        data.add(CountryStatData(i.Country, i.TotalConfirmed))
+                        data.add(CountryStatData(i.Country, i.Slug, i.TotalConfirmed))
                     }
-                    CountrydataRecyclerView.adapter = CountryListAd(activity, data)
+
                     Placeconfirmed.text = wsdata.Global.TotalConfirmed.toString()
                     Placedeath.text = wsdata.Global.TotalDeaths.toString()
                     PlaceRecovered.text = wsdata.Global.TotalRecovered.toString()
+
+                    val countryClickListener = View.OnClickListener {
+                        val position = it.tag as Int
+                        val intent = Intent(activity, DataCountryActivity::class.java)
+                        intent.putExtra("COUNTRY", wsdata.Countries[position].Country)
+                        intent.putExtra("COUNTRY_SLUG", wsdata.Countries[position].Slug)
+                        startActivity(intent)
+                    }
+                    CountrydataRecyclerView.adapter = CountryListAd(activity, data, countryClickListener)
+
                 }
                 else {
                     throw Exception()
@@ -65,7 +76,6 @@ class ActivityDataAll : AppCompatActivity() {
             LinearLayoutManager.VERTICAL, false)
     }
 
-
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         val id : Int = item.itemId
         if (id == android.R.id.home)
@@ -73,8 +83,4 @@ class ActivityDataAll : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
-    fun text_message_clicked(view: View) {
-        val intent = Intent(this, GraphActivity::class.java)
-        startActivity(intent)
-    }
 }
