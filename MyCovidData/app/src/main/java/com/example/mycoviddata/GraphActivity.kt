@@ -3,6 +3,7 @@ package com.example.mycoviddata
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.MenuItem
 import android.view.View
 import android.widget.Button
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -72,6 +73,8 @@ class GraphActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_graph)
+        supportActionBar?.setDisplayShowHomeEnabled(true)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         val baseURL = "https://api.covid19api.com/"
         var country : String = ""
@@ -139,5 +142,12 @@ class GraphActivity : AppCompatActivity() {
             if (country != "")
                 showCasesForCountry(country, status)
         }
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        val id : Int = item.itemId
+        if (id == android.R.id.home)
+            this.finish()
+        return super.onOptionsItemSelected(item)
     }
 }

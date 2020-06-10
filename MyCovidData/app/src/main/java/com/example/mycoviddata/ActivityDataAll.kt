@@ -75,5 +75,5 @@ class ActivityDataAll : AppCompatActivity() {
             this.finish()
         return super.onOptionsItemSelected(item)
     }
-    
+
 }
