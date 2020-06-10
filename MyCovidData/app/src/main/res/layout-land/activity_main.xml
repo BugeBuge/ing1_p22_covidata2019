@@ -23,12 +23,12 @@
         android:layout_width="362dp"
         android:layout_height="94dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
         android:text="@string/in_this_application_you_ll_find_some_informations_about_coronavirus_in_the_world"
         android:textAlignment="center"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
@@ -37,7 +37,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
         android:text="@string/app_by"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -88,10 +87,11 @@
         android:id="@+id/button_data"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginBottom="7dp"
         android:text="@string/data"
-        app:layout_constraintStart_toStartOf="@+id/guideline3"
-        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline3" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline3"
@@ -114,10 +114,10 @@
         android:id="@+id/button_Graph"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="180dp"
         android:text="@string/graph"
-        app:layout_constraintBottom_toTopOf="@+id/Made"
         app:layout_constraintStart_toStartOf="@+id/guideline3"
-        app:layout_constraintTop_toBottomOf="@+id/button_data" />
+        app:layout_constraintTop_toTopOf="@+id/button_data" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -132,9 +132,9 @@
         android:id="@+id/button_surprise"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="40dp"
+        android:layout_marginEnd="196dp"
         android:text="@string/clique_ici"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/button_data" />
+        app:layout_constraintTop_toTopOf="@+id/button_Graph" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

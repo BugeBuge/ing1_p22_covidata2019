@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
+import android.view.View
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.gson.GsonBuilder
@@ -64,10 +65,6 @@ class ActivityDataAll : AppCompatActivity() {
             LinearLayoutManager.VERTICAL, false)
     }
 
-    fun text_message_clicked(view: TextView){
-        val intent = Intent(this, GraphActivity::class.java)
-        startActivity(intent)
-    }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         val id : Int = item.itemId
@@ -76,4 +73,8 @@ class ActivityDataAll : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
+    fun text_message_clicked(view: View) {
+        val intent = Intent(this, GraphActivity::class.java)
+        startActivity(intent)
+    }
 }
