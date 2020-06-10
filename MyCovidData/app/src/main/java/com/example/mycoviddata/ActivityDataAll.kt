@@ -4,6 +4,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.MenuItem
+import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.gson.GsonBuilder
 import kotlinx.android.synthetic.main.activity_data_all.*
@@ -19,6 +21,8 @@ class ActivityDataAll : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_data_all)
+        supportActionBar?.setDisplayShowHomeEnabled(true)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         val baseURL = "https://api.covid19api.com/"
         val jsonConverter = GsonConverterFactory.create(GsonBuilder().create())
@@ -60,8 +64,16 @@ class ActivityDataAll : AppCompatActivity() {
             LinearLayoutManager.VERTICAL, false)
     }
 
-    fun text_message_clicked(){
+    fun text_message_clicked(view: TextView){
         val intent = Intent(this, GraphActivity::class.java)
         startActivity(intent)
     }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        val id : Int = item.itemId
+        if (id == android.R.id.home)
+            this.finish()
+        return super.onOptionsItemSelected(item)
+    }
+    
 }
