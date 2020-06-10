@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class CountryListAd(val context: Context, val data: List<CountryStatData>)
+class CountryListAd(val context: Context, val data: List<CountryStatData>, private val countryListener: View.OnClickListener)
     : RecyclerView.Adapter<CountryListAd.ViewHolder>() {
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val paysView: TextView = itemView.findViewById(R.id.ItemPays)
@@ -18,6 +18,8 @@ class CountryListAd(val context: Context, val data: List<CountryStatData>)
         val rowView = LayoutInflater
             .from(context)
             .inflate(R.layout.activity_country_item_list, parent, false)
+
+        rowView.setOnClickListener(countryListener)
 
         return ViewHolder(rowView)
     }
@@ -30,5 +32,7 @@ class CountryListAd(val context: Context, val data: List<CountryStatData>)
         val currentItem = data[position]
         holder.paysView.text = currentItem.country
         holder.nbcas.text = currentItem.cas.toString()
+        holder.itemView.tag = position
+
     }
 }
