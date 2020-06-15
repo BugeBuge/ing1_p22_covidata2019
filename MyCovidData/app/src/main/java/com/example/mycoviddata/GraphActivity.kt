@@ -27,6 +27,27 @@ class GraphActivity : AppCompatActivity() {
         return max
     }
 
+    fun copy_list(l : List<CountryName>) : MutableList<CountryName> {
+        val nl : MutableList<CountryName> = arrayListOf()
+        for (x in l)
+            nl.add(x)
+        return nl;
+    }
+
+    fun order_country(l : MutableList<CountryName>) {
+        val m : Int = l.size - 1
+        for (i in 0..m) {
+            for (j in i..m) {
+                if (l[i].Country > l[j].Country)
+                {
+                    val mem : CountryName = l[i]
+                    l[i] = l[j]
+                    l[j] = mem
+                }
+            }
+        }
+    }
+
     fun showCasesForCountry(country: String, status: String) {
         val baseURL = "https://api.covid19api.com/"
         val jsonConverter = GsonConverterFactory.create(GsonBuilder().create())
@@ -101,7 +122,8 @@ class GraphActivity : AppCompatActivity() {
 
             override fun onResponse(call: Call<List<CountryName>>, response: Response<List<CountryName>>) {
                 if (response.code() == 200) {
-                    val wsdata = response.body()!!
+                    val wsdata : MutableList<CountryName> = copy_list(response.body()!!)
+                    order_country(wsdata)
                     if (!wsdata.isEmpty())
                         country = wsdata[0].Slug
 
