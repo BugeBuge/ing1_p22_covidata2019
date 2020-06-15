@@ -13,6 +13,7 @@ class GraphListAdapter(val context: Context, val data: List<DateGraphSample>)
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val dateView: TextView = itemView.findViewById(R.id.dateGraph)
         val progress: ProgressBar = itemView.findViewById(R.id.progressBar)
+        var prct: TextView = itemView.findViewById(R.id.prct_date)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -33,5 +34,7 @@ class GraphListAdapter(val context: Context, val data: List<DateGraphSample>)
         holder.dateView.text = currentItem.date
         holder.progress.progress = currentItem.progress
         holder.progress.max = currentItem.max
+        val pr : Float = (holder.progress.progress.toFloat() / holder.progress.max.toFloat()) * 100f
+        holder.prct.text = pr.toInt().toString() + "%";
     }
 }

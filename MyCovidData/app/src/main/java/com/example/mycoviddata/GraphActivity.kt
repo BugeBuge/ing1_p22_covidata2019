@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.MenuItem
 import android.view.View
 import android.widget.Button
+import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.gson.GsonBuilder
 import kotlinx.android.synthetic.main.activity_graph.*
@@ -45,9 +46,11 @@ class GraphActivity : AppCompatActivity() {
 
             override fun onResponse(call: Call<List<DatedSituation>>, response: Response<List<DatedSituation>>) {
                 if (response.code() == 200) {
+                    val total = findViewById<TextView>(R.id.total_value);
                     val wsdata = response.body()!!
                     if (wsdata.isEmpty()) {
                         GraphRecyclerView.adapter = GraphListAdapter(activity, data)
+                        total.text = ""
                         return
                     }
                     val max : Int = max(wsdata)
@@ -56,6 +59,8 @@ class GraphActivity : AppCompatActivity() {
                         data.add(DateGraphSample(x.Date.substring(0, 10), x.Cases, max))
                     }
                     GraphRecyclerView.adapter = GraphListAdapter(activity, data)
+
+                    total.text = data[0].max.toString();
 
                 }
                 else {
