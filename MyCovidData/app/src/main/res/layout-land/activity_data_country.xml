@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <CalendarView
+        android:id="@+id/activity_data_country_calendar"
+        android:layout_width="wrap_content"
+        android:layout_height="300dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/activity_data_country_txt_country"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/country"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="@+id/activity_data_country_guideline"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/activity_data_country_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.58" />
+
+    <TextView
+        android:id="@+id/activity_data_country_txt_confirmed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/confirmed"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/guideline6"
+        app:layout_constraintTop_toBottomOf="@+id/activity_data_country_txt_country" />
+
+    <TextView
+        android:id="@+id/activity_data_country_txt_deaths"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/deaths"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/activity_data_country_txt_confirmed"
+        app:layout_constraintTop_toBottomOf="@+id/activity_data_country_txt_confirmed" />
+
+    <TextView
+        android:id="@+id/activity_data_country_txt_recovered"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/recovered"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/activity_data_country_txt_deaths"
+        app:layout_constraintTop_toBottomOf="@+id/activity_data_country_txt_deaths" />
+
+    <TextView
+        android:id="@+id/activity_data_country_txt_confirmed_nb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/_0"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/activity_data_country_txt_confirmed"
+        app:layout_constraintStart_toEndOf="@+id/activity_data_country_txt_confirmed"
+        app:layout_constraintTop_toTopOf="@+id/activity_data_country_txt_confirmed" />
+
+    <TextView
+        android:id="@+id/activity_data_country_txt_recovered_nb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/_0"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/activity_data_country_txt_recovered"
+        app:layout_constraintStart_toEndOf="@+id/activity_data_country_txt_recovered"
+        app:layout_constraintTop_toTopOf="@+id/activity_data_country_txt_recovered" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="429dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>
