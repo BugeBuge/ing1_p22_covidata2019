@@ -3,12 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/background">
 
     <CalendarView
         android:id="@+id/activity_data_country_calendar"
         android:layout_width="0dp"
         android:layout_height="300dp"
+        android:background="#48FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -20,6 +22,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="24dp"
         android:text="@string/country"
+        android:textColor="#FFFFFF"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/activity_data_country_calendar" />
@@ -37,6 +40,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:text="@string/confirmed"
+        android:textColor="#FFFFFF"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="@+id/activity_data_country_guideline"
         app:layout_constraintTop_toBottomOf="@+id/activity_data_country_txt_country" />
@@ -47,6 +51,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="@string/deaths"
+        android:textColor="#FFFFFF"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="@+id/activity_data_country_guideline"
         app:layout_constraintTop_toBottomOf="@+id/activity_data_country_txt_confirmed" />
@@ -57,6 +62,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="@string/recovered"
+        android:textColor="#FFFFFF"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="@+id/activity_data_country_guideline"
         app:layout_constraintTop_toBottomOf="@+id/activity_data_country_txt_deaths" />
@@ -67,6 +73,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:text="@string/_0"
+        android:textColor="#FFFFFF"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="@+id/activity_data_country_txt_confirmed"
         app:layout_constraintStart_toEndOf="@+id/activity_data_country_txt_confirmed"
@@ -78,6 +85,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:text="@string/_0"
+        android:textColor="#FFFFFF"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="@+id/activity_data_country_txt_deaths"
         app:layout_constraintStart_toEndOf="@+id/activity_data_country_txt_deaths"
@@ -89,6 +97,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:text="@string/_0"
+        android:textColor="#FFFFFF"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="@+id/activity_data_country_txt_recovered"
         app:layout_constraintStart_toEndOf="@+id/activity_data_country_txt_recovered"

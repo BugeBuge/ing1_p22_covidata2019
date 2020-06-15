@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ActivityDataAll">
+    tools:context=".ActivityDataAll"
+    android:background="@drawable/background">
 
     <TextView
         android:id="@+id/Totals"
@@ -14,6 +15,7 @@
         android:text="@string/totals"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textColor="#FFFFFF"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/guideline4"
         app:layout_constraintTop_toTopOf="parent" />
@@ -33,6 +35,7 @@
         android:layout_marginTop="24dp"
         android:text="@string/world"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="#FFFFFF"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Totals" />
 
@@ -43,6 +46,7 @@
         android:layout_marginTop="16dp"
         android:text="@string/confirmed"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#FFFFFF"
         app:layout_constraintStart_toStartOf="@+id/guideline4"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
@@ -53,6 +57,7 @@
         android:layout_marginTop="8dp"
         android:text="@string/deaths"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#FFFFFF"
         app:layout_constraintStart_toStartOf="@+id/guideline4"
         app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
@@ -63,6 +68,7 @@
         android:layout_marginTop="8dp"
         android:text="@string/recovered"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#FFFFFF"
         app:layout_constraintStart_toStartOf="@+id/guideline4"
         app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
@@ -74,6 +80,7 @@
         android:layout_marginTop="32dp"
         android:text="@string/by_country"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="#FFFFFF"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
@@ -96,6 +103,7 @@
         android:layout_height="wrap_content"
         android:text="@string/_789"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toStartOf="@+id/guideline5"
         app:layout_constraintTop_toTopOf="@+id/textView8" />
 
@@ -105,6 +113,7 @@
         android:layout_height="wrap_content"
         android:text="@string/_456"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toStartOf="@+id/guideline5"
         app:layout_constraintTop_toTopOf="@+id/textView9" />
 
@@ -114,6 +123,7 @@
         android:layout_height="wrap_content"
         android:text="@string/_123"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toStartOf="@+id/guideline5"
         app:layout_constraintTop_toTopOf="@+id/textView10" />
 
