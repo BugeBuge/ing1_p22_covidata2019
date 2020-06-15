@@ -20,7 +20,6 @@ class GraphCountryAdapter(val context: Context, val data: List<CountryName>,
             .inflate(R.layout.item_graph_list_country, parent, false)
 
         rowView.setOnClickListener(countryListener)
-
         return ViewHolder(rowView)
     }
 

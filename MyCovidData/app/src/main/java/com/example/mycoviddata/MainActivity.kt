@@ -1,13 +1,13 @@
 package com.example.mycoviddata
 
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Button
 import com.google.gson.GsonBuilder
-import kotlinx.android.synthetic.main.activity_main.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -33,5 +33,12 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, ActivityDataAll::class.java)
             startActivity(intent)
         }
+
+        val surpriseButton = findViewById<Button>(R.id.button_surprise)
+        surpriseButton.setOnClickListener{
+            val appPackageName = "com.miniclip.plagueinc"
+            startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + appPackageName)))
+        }
+
     }
 }
