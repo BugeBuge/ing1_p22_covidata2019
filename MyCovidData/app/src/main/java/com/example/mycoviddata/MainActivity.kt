@@ -35,9 +35,24 @@ class MainActivity : AppCompatActivity() {
         }
 
         val surpriseButton = findViewById<Button>(R.id.button_surprise)
-        surpriseButton.setOnClickListener{
+        surpriseButton.setOnClickListener {
             val appPackageName = "com.miniclip.plagueinc"
-            startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + appPackageName)))
+            try {
+                startActivity(
+                    Intent(
+                        Intent.ACTION_VIEW,
+                        Uri.parse("market://details?id=$appPackageName")
+                    )
+                )
+            } catch (e: android.content.ActivityNotFoundException)
+            {
+                startActivity(
+                    Intent(
+                        Intent.ACTION_VIEW,
+                        Uri.parse("https://play.google.com/store/apps/details?id=$appPackageName")
+                    )
+                )
+            }
         }
 
     }
