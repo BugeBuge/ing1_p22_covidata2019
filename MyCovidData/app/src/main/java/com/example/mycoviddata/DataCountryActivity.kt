@@ -15,12 +15,14 @@ import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.lang.Exception
+import java.text.DateFormat
 import java.text.SimpleDateFormat
+import java.time.LocalDate.parse
 import java.util.*
 
 class DataCountryActivity : AppCompatActivity() {
 
-    fun setCountryInfoByDate(country: String, status: String) {
+    fun setCountryInfoByDate(country: String, status: String, date: Date) {
         val baseURL = "https://api.covid19api.com/"
         val jsonConverter = GsonConverterFactory.create(GsonBuilder().create())
         val retrofit = Retrofit.Builder()
@@ -28,7 +30,6 @@ class DataCountryActivity : AppCompatActivity() {
             .addConverterFactory(jsonConverter)
             .build()
         val service: WebService = retrofit.create(WebService::class.java)
-        val data: MutableList<DateGraphSample> = arrayListOf()
         val activity: DataCountryActivity = this
 
         val callback: Callback<List<DatedSituation>> = object : Callback<List<DatedSituation>> {
@@ -37,32 +38,31 @@ class DataCountryActivity : AppCompatActivity() {
                 Log.w("TAG", "WebService call failed")
             }
 
-            override fun onResponse(
-                call: Call<List<DatedSituation>>,
-                response: Response<List<DatedSituation>>
-            ) {
+            override fun onResponse(call: Call<List<DatedSituation>>, response: Response<List<DatedSituation>>) {
                 if (response.code() == 200) {
                     val wsdata = response.body()!!
                     if (wsdata.isEmpty()) {
                         return
                     }
                     val refDate: String =
-                        SimpleDateFormat("yyyy-MM-dd").format(activity_data_country_calendar.date)
-                    for (i in wsdata) {
-                        if (refDate.equals(i.Date.substring(0, 10))) {
-                            if (status.equals("confirmed"))
-                                activity_data_country_txt_confirmed_nb.text = i.Cases.toString()
-                            else if (status.equals("deaths"))
-                                activity_data_country_txt_deaths_nb.text = i.Cases.toString()
-                            else
-                                activity_data_country_txt_recovered_nb.text = i.Cases.toString()
-                            break;
-                        }
-                    }
-                    if (activity_data_country_txt_confirmed_nb.text.isEmpty())
+                        SimpleDateFormat("yyyy-MM-dd").format(date)
+                    if (date.time >= activity_data_country_calendar.date || date.before(SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'").parse(wsdata[0].Date))) {
                         activity_data_country_txt_confirmed_nb.text = "0"
                         activity_data_country_txt_deaths_nb.text = "0"
                         activity_data_country_txt_recovered_nb.text = "0"
+                    } else {
+                        for (i in wsdata) {
+                            if (refDate.equals(i.Date.substring(0, 10))) {
+                                if (status.equals("confirmed"))
+                                    activity_data_country_txt_confirmed_nb.text = i.Cases.toString()
+                                else if (status.equals("deaths"))
+                                    activity_data_country_txt_deaths_nb.text = i.Cases.toString()
+                                else
+                                    activity_data_country_txt_recovered_nb.text = i.Cases.toString()
+                                break;
+                            }
+                        }
+                    }
                 } else {
                     throw Exception()
                 }
@@ -78,15 +78,16 @@ class DataCountryActivity : AppCompatActivity() {
 
         activity_data_country_txt_country.text = intent.getStringExtra("COUNTRY")!!
         val country = intent.getStringExtra("COUNTRY_SLUG")!!
-        setCountryInfoByDate(country, "confirmed")
-        setCountryInfoByDate(country, "deaths")
-        setCountryInfoByDate(country, "recovered")
+        val curDate = Date(activity_data_country_calendar.date)
+        setCountryInfoByDate(country, "confirmed", curDate)
+        setCountryInfoByDate(country, "deaths", curDate)
+        setCountryInfoByDate(country, "recovered", curDate)
 
         activity_data_country_calendar.setOnDateChangeListener { view, year, month, dayOfMonth ->
-            activity_data_country_calendar.date = 0
-            setCountryInfoByDate(country, "confirmed")
-            setCountryInfoByDate(country, "deaths")
-            setCountryInfoByDate(country, "recovered")
+            val newDate = Date(year - 1900, month, dayOfMonth);
+            setCountryInfoByDate(country, "confirmed", newDate)
+            setCountryInfoByDate(country, "deaths", newDate)
+            setCountryInfoByDate(country, "recovered", newDate)
         }
     }
 }
