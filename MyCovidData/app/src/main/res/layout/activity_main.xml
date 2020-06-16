@@ -94,6 +94,7 @@
     <Button
         android:id="@+id/button_data"
         android:layout_width="109dp"
+        android:layout_height="57dp"
         android:layout_marginTop="57dp"
         android:background="@drawable/comprimebleu"
         android:text="@string/data"
@@ -121,8 +122,9 @@
 
     <Button
         android:id="@+id/button_Graph"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="109dp"
+        android:layout_height="57dp"
+        android:background="@drawable/comprimevert"
         android:text="@string/graph"
         android:textColor="#000000"
         app:layout_constraintBottom_toTopOf="@+id/Made"
@@ -140,9 +142,10 @@
 
     <Button
         android:id="@+id/button_surprise"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="109dp"
+        android:layout_height="57dp"
         android:layout_marginEnd="40dp"
+        android:background="@drawable/comprimerouge"
         android:text="@string/clique_ici"
         android:textColor="#000000"
         app:layout_constraintEnd_toEndOf="parent"

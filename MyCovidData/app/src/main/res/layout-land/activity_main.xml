@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
+    android:background="@drawable/backgroundland"
     tools:context=".MainActivity">
 
     <TextView
@@ -123,10 +123,10 @@
         android:id="@+id/button_Graph"
         android:layout_width="109dp"
         android:layout_height="57dp"
-        android:layout_marginStart="180dp"
         android:background="@drawable/comprimebleu"
         android:text="@string/graph"
-        app:layout_constraintStart_toStartOf="@+id/guideline3"
+        app:layout_constraintEnd_toStartOf="@+id/button_surprise"
+        app:layout_constraintStart_toEndOf="@+id/button_data"
         app:layout_constraintTop_toTopOf="@+id/button_data" />
 
     <ImageView
