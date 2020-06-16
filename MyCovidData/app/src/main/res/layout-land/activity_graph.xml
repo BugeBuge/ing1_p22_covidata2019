@@ -8,8 +8,8 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/GraphRecyclerView"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
+        android:layout_width="479dp"
+        android:layout_height="183dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="10dp"
@@ -27,7 +27,7 @@
     <Button
         android:id="@+id/GraphButtonConfirmed"
         android:layout_width="109dp"
-        android:layout_height="57dp"
+        android:layout_height="40dp"
         android:layout_marginBottom="20dp"
         android:background="@drawable/comprimebleu"
         android:text="@string/confirmed_btn"
@@ -39,7 +39,7 @@
     <Button
         android:id="@+id/GraphButtonDeath"
         android:layout_width="109dp"
-        android:layout_height="57dp"
+        android:layout_height="40dp"
         android:background="@drawable/comprimebleu"
         android:text="@string/deaths_btn"
         app:layout_constraintEnd_toStartOf="@+id/GraphButtonRecovered"
@@ -50,7 +50,7 @@
     <Button
         android:id="@+id/GraphButtonRecovered"
         android:layout_width="109dp"
-        android:layout_height="57dp"
+        android:layout_height="40dp"
         android:background="@drawable/comprimebleu"
         android:text="@string/recovered_btn"
         app:layout_constraintEnd_toEndOf="parent"
@@ -72,12 +72,14 @@
         android:id="@+id/total_text"
         android:layout_width="95dp"
         android:layout_height="45dp"
+        android:layout_marginStart="8dp"
         android:text="@string/total"
         android:textColor="#FFFFFF"
         android:textSize="36sp"
         app:layout_constraintBottom_toTopOf="@+id/GraphButtonConfirmed"
         app:layout_constraintStart_toEndOf="@+id/GraphRecyclerView"
-        app:layout_constraintTop_toBottomOf="@+id/GraphCountryRecyclerView" />
+        app:layout_constraintTop_toBottomOf="@+id/GraphCountryRecyclerView"
+        app:layout_constraintVertical_bias="0.453" />
 
     <TextView
         android:id="@+id/total_value"
