@@ -2,6 +2,7 @@ package com.example.mycoviddata
 
 import android.os.Bundle
 import android.util.Log
+import android.view.MenuItem
 import android.widget.DatePicker
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -75,6 +76,8 @@ class DataCountryActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_data_country)
+        supportActionBar?.setDisplayShowHomeEnabled(true)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         activity_data_country_txt_country.text = intent.getStringExtra("COUNTRY")!!
         val country = intent.getStringExtra("COUNTRY_SLUG")!!
@@ -89,5 +92,12 @@ class DataCountryActivity : AppCompatActivity() {
             setCountryInfoByDate(country, "deaths", newDate)
             setCountryInfoByDate(country, "recovered", newDate)
         }
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        val id : Int = item.itemId
+        if (id == android.R.id.home)
+            this.finish()
+        return super.onOptionsItemSelected(item)
     }
 }
