@@ -11,6 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="300dp"
         android:layout_marginTop="4dp"
+        android:background="#48FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -90,10 +91,22 @@
         app:layout_constraintStart_toEndOf="@+id/activity_data_country_txt_recovered"
         app:layout_constraintTop_toTopOf="@+id/activity_data_country_txt_recovered" />
 
+    <TextView
+        android:id="@+id/activity_data_country_txt_deaths_nb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/_0"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/activity_data_country_txt_deaths"
+        app:layout_constraintTop_toTopOf="@+id/activity_data_country_txt_deaths" />
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_begin="429dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
